@@ -1,0 +1,22 @@
+package jp.co.ricoh.cotos.rsicommonlib.repository.ImportContractInfo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import jp.co.ricoh.cotos.rsicommonlib.entity.ImportContractInfo.BasicContents;
+
+@Repository
+public interface BasicContentsRepository extends CrudRepository<BasicContents, Long> {
+
+	@Query(value = "select b.* from basic_contents b, cotos_management_info c "//
+			+ "where b.id = c.basic_contents_id "//
+			+ "and trunc(b.contract_start_date) <= :contractStartDate "//
+			+ "and c.cotos_processing_flg = :cotosProcessingFlg "//
+			+ "order by b.id ", nativeQuery = true)
+	public List<BasicContents> findByContractStartDateAndCotosProcessingFlg(@Param("contractStartDate") String contractStartDate, @Param("cotosProcessingFlg") String cotosProcessingFlg);
+
+}
