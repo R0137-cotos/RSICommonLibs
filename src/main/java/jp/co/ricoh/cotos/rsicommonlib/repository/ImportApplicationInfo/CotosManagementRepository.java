@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import jp.co.ricoh.cotos.rsicommonlib.entity.ImportApplicationInfo.CotosManagementInfo;
+import jp.co.ricoh.cotos.rsicommonlib.entity.CotosManagementInfo;
 
 @Repository
 public interface CotosManagementRepository extends CrudRepository<CotosManagementInfo, Long> {

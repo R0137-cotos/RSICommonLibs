@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import jp.co.ricoh.cotos.rsicommonlib.entity.ZuoraGetExportInvoice.SalesCalcResultWork;
-import jp.co.ricoh.cotos.rsicommonlib.entity.ZuoraGetExportInvoice.SalesCalcResultWork.CotosProcessingFlg;
+import jp.co.ricoh.cotos.rsicommonlib.entity.SalesCalcResultWork;
+import jp.co.ricoh.cotos.rsicommonlib.entity.SalesCalcResultWork.CotosProcessingFlg;
 
 @Repository
 public interface SalesCalcResultWorkRepository extends JpaRepository<SalesCalcResultWork, Long> {

@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -32,6 +33,7 @@ import lombok.EqualsAndHashCode;
  * 参考：KIZUNAviCreateSubstituteInvoice#convertToReportSourcePageDto
  */
 @Entity
+@Table(name = "kizunavi_substitute_sales_claim")
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class KizunaviSubstituteSalesClaim extends EntityBase {
@@ -445,7 +447,7 @@ public class KizunaviSubstituteSalesClaim extends EntityBase {
 	 * @return R会社コード
 	 */
 	//		"	"（※１）
-	//		以下の条件でR会社コードを抽出(特定)する。 
+	//		以下の条件でR会社コードを抽出(特定)する。
 	//		　※母店については請求書作成対象外とするために必要な処理となる
 	//
 	//		if (KIZUNAvi代売請求.商流区分 = ""3:代売_母店_接点店"")

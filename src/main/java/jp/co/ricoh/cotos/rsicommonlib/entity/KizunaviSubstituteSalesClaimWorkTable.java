@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.entity.KIZUNAviCreateSubstituteSalesClaim;
+package jp.co.ricoh.cotos.rsicommonlib.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -19,21 +19,21 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * KIZUNAvi代売請求を表すEntity
+ * KIZUNAvi代売請求WorkTableを表すEntity
  */
 @Entity
-@Table(name = "kizunavi_substitute_sales_claim")
+@Table(name = "kizunavi_substitute_sales_claim_work_table")
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class KizunaviSubstituteSalesClaim extends EntityBase {
+public class KizunaviSubstituteSalesClaimWorkTable extends EntityBase {
 
 	/*
 	 * 代売請求ID
 	 */
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "kizunavi_substitute_sales_claim_seq")
-	@SequenceGenerator(name = "kizunavi_substitute_sales_claim_seq", sequenceName = "kizunavi_substitute_sales_claim_seq", allocationSize = 1)
 	@JsonIgnore
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "kizunavi_substitute_sales_claim_work_table_seq")
+	@SequenceGenerator(name = "kizunavi_substitute_sales_claim_work_table_seq", sequenceName = "kizunavi_substitute_sales_claim_work_table_seq", allocationSize = 1)
 	private long id;
 	/*
 	 * 計上ID
@@ -144,7 +144,7 @@ public class KizunaviSubstituteSalesClaim extends EntityBase {
 	/**
 	 * 作成日
 	 */
-	@JsonProperty("rInvoiceSummary")
+	@JsonProperty("作成日")
 	private Date createdDate;
 	/**
 	 * 数量
@@ -259,7 +259,6 @@ public class KizunaviSubstituteSalesClaim extends EntityBase {
 	@JsonProperty("二次店_R会社コード")
 	@Column(name = "secondary_r_company_code")
 	private String secondaryRCompanyCode;
-
 	/**
 	 * 二次店_R会社名
 	 */
@@ -306,5 +305,4 @@ public class KizunaviSubstituteSalesClaim extends EntityBase {
 	 */
 	@JsonProperty("二次店_売上消費税率区分")
 	private String secondaryUnitPriceTaxRateClass;
-
 }
