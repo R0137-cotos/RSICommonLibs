@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.entity.ZuoraRequestExportInvoice;
+package jp.co.ricoh.cotos.rsicommonlib.dto.parameter.ZuoraGetExportInvoice;
 
 import lombok.Data;
 
@@ -21,13 +21,4 @@ public class ResponseFileEntity {
 
 	private String success;
 
-	public ResponseFileEntity(RequestFileTipe requestFileTipe, ExportResponseBody exportResponseBody) {
-		this.requestFileTipe = requestFileTipe;
-		this.id = exportResponseBody.getId();
-		this.success = exportResponseBody.getSuccess();
-	}
-	
-	public ResponseFileEntity() {
-		
-	}
 }

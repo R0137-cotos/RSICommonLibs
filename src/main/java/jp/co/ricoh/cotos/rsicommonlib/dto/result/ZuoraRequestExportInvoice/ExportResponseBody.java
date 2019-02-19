@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.entity.ZuoraRequestExportInvoice;
+package jp.co.ricoh.cotos.rsicommonlib.dto.result.ZuoraRequestExportInvoice;
 
 import lombok.Data;
 
