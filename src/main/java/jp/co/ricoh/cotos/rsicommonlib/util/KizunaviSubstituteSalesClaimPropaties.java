@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.util.KIZUNAviCreateSubstituteInvoice;
+package jp.co.ricoh.cotos.rsicommonlib.util;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

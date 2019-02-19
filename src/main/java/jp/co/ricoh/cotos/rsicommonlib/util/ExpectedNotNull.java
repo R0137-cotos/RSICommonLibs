@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.util.ZuoraGetExportInvoice;
+package jp.co.ricoh.cotos.rsicommonlib.util;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
