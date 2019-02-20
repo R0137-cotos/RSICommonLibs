@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class DistributorInfoForCreateAccountingInitialData {
+public class DistributorInfoForInitial {
 
 	/**OE届け先コード**/
 	private String oeDeliveryCd;

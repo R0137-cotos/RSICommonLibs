@@ -8,7 +8,7 @@ import lombok.Data;
  *
  */
 @Data
-public class ExportResponseBodyForZuoraGetExportInvoice {
+public class ExportResponseBodyForZuoraGet {
 	public static String STATUS_COMPLETED_STR = "Completed";
 	String Format;
 	String Query;

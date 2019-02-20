@@ -39,9 +39,9 @@ public class AccountingExecutionParameter {
 	private TaxRateInfo taxRateInfoFee;
 
 	/** 販売店情報（母店） */
-	private DistributorInfoForAccountingCreateRsiRunnging distributorInfoMother;
+	private DistributorInfoForRunnging distributorInfoMother;
 
 	/** 販売店情報（接点店） */
-	private DistributorInfoForAccountingCreateRsiRunnging distributorInfo;
+	private DistributorInfoForRunnging distributorInfo;
 
 }

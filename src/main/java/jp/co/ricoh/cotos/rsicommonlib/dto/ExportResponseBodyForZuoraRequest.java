@@ -8,7 +8,7 @@ import lombok.Data;
  *
  */
 @Data
-public class ExportResponseBodyForZuoraRequestExportInvoice {
+public class ExportResponseBodyForZuoraRequest {
 	String Id;
 	String Success;
 }

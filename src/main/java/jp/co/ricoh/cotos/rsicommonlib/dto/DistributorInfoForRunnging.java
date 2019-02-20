@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class DistributorInfoForAccountingCreateRsiRunnging {
+public class DistributorInfoForRunnging {
 
 	/** MoM会社ID */
 	private String momCmpId;
