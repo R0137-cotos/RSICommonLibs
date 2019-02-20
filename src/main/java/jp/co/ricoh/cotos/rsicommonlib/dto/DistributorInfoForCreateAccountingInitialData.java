@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.dto.CreateAccountingInitialData;
+package jp.co.ricoh.cotos.rsicommonlib.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class DistributorInfo {
+public class DistributorInfoForCreateAccountingInitialData {
 
 	/**OE届け先コード**/
 	private String oeDeliveryCd;

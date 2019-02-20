@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.repository.ZuoraGetExportInvoice;
+package jp.co.ricoh.cotos.rsicommonlib.repository;
 
 import java.util.List;
 

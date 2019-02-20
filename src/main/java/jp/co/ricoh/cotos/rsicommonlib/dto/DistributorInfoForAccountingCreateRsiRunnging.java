@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.dto.AccountingCreateRsiRunnging;
+package jp.co.ricoh.cotos.rsicommonlib.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class DistributorInfo {
+public class DistributorInfoForAccountingCreateRsiRunnging {
 
 	/** MoM会社ID */
 	private String momCmpId;

@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.dto.ZuoraGetExportInvoice;
+package jp.co.ricoh.cotos.rsicommonlib.dto;
 
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import lombok.Data;
  *
  */
 @Data
-public class ExportResponseBody {
+public class ExportResponseBodyForZuoraGetExportInvoice {
 	public static String STATUS_COMPLETED_STR = "Completed";
 	String Format;
 	String Query;

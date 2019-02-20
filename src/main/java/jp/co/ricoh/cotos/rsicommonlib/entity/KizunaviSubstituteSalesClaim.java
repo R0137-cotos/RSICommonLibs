@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.entity.KIZUNAviCreateSubstituteSalesClaim;
+package jp.co.ricoh.cotos.rsicommonlib.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;

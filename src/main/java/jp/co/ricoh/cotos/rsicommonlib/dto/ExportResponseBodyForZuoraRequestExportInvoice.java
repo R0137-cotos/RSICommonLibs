@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.dto.ZuoraRequestExportInvoice;
+package jp.co.ricoh.cotos.rsicommonlib.dto;
 
 import lombok.Data;
 
@@ -8,7 +8,7 @@ import lombok.Data;
  *
  */
 @Data
-public class ExportResponseBody {
+public class ExportResponseBodyForZuoraRequestExportInvoice {
 	String Id;
 	String Success;
 }

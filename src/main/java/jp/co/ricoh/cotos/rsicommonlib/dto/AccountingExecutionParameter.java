@@ -1,6 +1,5 @@
 package jp.co.ricoh.cotos.rsicommonlib.dto;
 
-import jp.co.ricoh.cotos.rsicommonlib.dto.AccountingCreateRsiRunnging.DistributorInfo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -40,9 +39,9 @@ public class AccountingExecutionParameter {
 	private TaxRateInfo taxRateInfoFee;
 
 	/** 販売店情報（母店） */
-	private DistributorInfo distributorInfoMother;
+	private DistributorInfoForAccountingCreateRsiRunnging distributorInfoMother;
 
 	/** 販売店情報（接点店） */
-	private DistributorInfo distributorInfo;
+	private DistributorInfoForAccountingCreateRsiRunnging distributorInfo;
 
 }

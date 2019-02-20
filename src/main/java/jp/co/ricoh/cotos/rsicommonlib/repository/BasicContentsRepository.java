@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.repository.ImportContractInfo;
+package jp.co.ricoh.cotos.rsicommonlib.repository;
 
 import java.util.List;
 
@@ -11,6 +11,8 @@ import jp.co.ricoh.cotos.rsicommonlib.entity.BasicContents;
 
 @Repository
 public interface BasicContentsRepository extends CrudRepository<BasicContents, Long> {
+
+	public BasicContents findFirstByBplatsRequestNoAndMakerManageNo(String bplatsRequestNo, String makerManageNo);
 
 	@Query(value = "select b.* from basic_contents b, cotos_management_info c "//
 			+ "where b.id = c.basic_contents_id "//

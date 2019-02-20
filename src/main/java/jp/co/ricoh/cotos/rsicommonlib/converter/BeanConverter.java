@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 import jp.co.ricoh.cotos.commonlib.entity.accounting.Accounting;
 import jp.co.ricoh.cotos.commonlib.entity.contract.CustomerContract;
+import jp.co.ricoh.cotos.rsicommonlib.entity.KizunaviSubstituteSalesClaim;
 import jp.co.ricoh.cotos.rsicommonlib.entity.KizunaviSubstituteSalesClaimWorkTable;
-import jp.co.ricoh.cotos.rsicommonlib.entity.KIZUNAviCreateSubstituteSalesClaim.KizunaviSubstituteSalesClaim;
 import jp.co.ricoh.cotos.rsicommonlib.util.KIZUNAviCreateSubstituteSalesClaimUtil;
 
 /**
