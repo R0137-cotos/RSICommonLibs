@@ -9,3 +9,4 @@
 |3|レポジトリ修正とDTOの名称変更|
 |4|SQL実行結果を格納するDTOに@Entity追加|
 |5|SQL実行結果を格納するDTOに@Entity追加(ItemMasterDto)|
+|6|SQL実行結果を格納するDTOに@Entity追加(SalesCalcResultWorkForRsiRunning,TaxRateInfo)|
