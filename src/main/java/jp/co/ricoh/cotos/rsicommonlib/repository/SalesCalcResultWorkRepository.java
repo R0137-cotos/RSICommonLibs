@@ -20,8 +20,8 @@ public interface SalesCalcResultWorkRepository extends JpaRepository<SalesCalcRe
 	@Transactional
 	@Modifying
 	@Query(value = "update SalesCalcResultWork scrw set "//
-			+ "scrw.cotosProcessingFlg = jp.co.ricoh.cotos.entity.rsi.SalesCalcResultWork$CotosProcessingFlg.処理不可 "
-			+ "where scrw.cotosProcessingFlg = jp.co.ricoh.cotos.entity.rsi.SalesCalcResultWork$CotosProcessingFlg.未処理 "//
+			+ "scrw.cotosProcessingFlg = jp.co.ricoh.cotos.rsicommonlib.entity.SalesCalcResultWork$CotosProcessingFlg.処理不可 "
+			+ "where scrw.cotosProcessingFlg = jp.co.ricoh.cotos.rsicommonlib.entity.SalesCalcResultWork$CotosProcessingFlg.未処理 "//
 			+ "and not exists ("//
 			+ "select ic from ItemContract ic "//
 			+ "where ic.ricohItemCode = scrw.productrateplanchargePrcEdpcodeC and ic.contractDetail.contract.rjManageNumber = scrw.rjManagementNumber)") //
