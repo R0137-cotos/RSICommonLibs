@@ -3,6 +3,9 @@ package jp.co.ricoh.cotos.rsicommonlib.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jp.co.ricoh.cotos.commonlib.entity.master.ItemMaster.CostType;
@@ -12,12 +15,14 @@ import lombok.Data;
 /**
  * 売上計算結果WORKを表すDto
  */
+@Entity
 @Data
 public class SalesCalcResultWorkForRsiRunning {
 
 	/**
 	 * 行番号
 	 */
+	@Id
 	@JsonProperty(value = "行番号")
 	private long rownum;
 
