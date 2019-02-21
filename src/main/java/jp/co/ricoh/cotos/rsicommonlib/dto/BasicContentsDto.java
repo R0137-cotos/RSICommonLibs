@@ -42,6 +42,6 @@ public class BasicContentsDto {
 	private String makerManageNo;
 
 	/**COTOS管理情報*/
-	private CotosManagementInfo cotosManagementInfo;
+	private CotosManagementInfoDto cotosManagementInfo;
 
 }
