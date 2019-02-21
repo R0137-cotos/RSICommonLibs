@@ -1,5 +1,7 @@
 package jp.co.ricoh.cotos.rsicommonlib.dto;
 
+import javax.persistence.Entity;
+
 import lombok.Data;
 
 /**
@@ -8,6 +10,7 @@ import lombok.Data;
  *
  */
 
+@Entity
 @Data
 public class MasterDto {
 
