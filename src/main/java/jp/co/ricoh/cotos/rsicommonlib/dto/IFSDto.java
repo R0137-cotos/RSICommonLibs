@@ -2,6 +2,7 @@ package jp.co.ricoh.cotos.rsicommonlib.dto;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -159,12 +160,15 @@ public class IFSDto {
 	private String ncontEndDate;
 
 	/**移行用キーワード１*/
+	@Column(name = "nmigarate_keyword1")
 	private String nmigarateKeyword1;
 
 	/**移行用キーワード２*/
+	@Column(name = "nmigarate_keyword2")
 	private String nmigarateKeyword2;
 
 	/**移行用キーワード３*/
+	@Column(name = "nmigarate_keyword3")
 	private String nmigarateKeyword3;
 
 	/**サポート特記*/
@@ -180,9 +184,11 @@ public class IFSDto {
 	private String npServiceCode;
 
 	/**開始日*/
+	@Column(name = "nservice_from_date1")
 	private Date nserviceFromDate1;
 
 	/**終了日*/
+	@Column(name = "nservice_to_date1")
 	private Date nserviceToDate1;
 
 	/**メニュー番号*/
@@ -231,12 +237,15 @@ public class IFSDto {
 	private String nworkStartFlg;
 
 	/**チェックポイント①*/
+	@Column(name = "ncheck_point1_flg")
 	private String ncheckPoint1Flg;
 
 	/**チェックポイント②*/
+	@Column(name = "ncheck_point2_flg")
 	private String ncheckPoint2Flg;
 
 	/**チェックポイント③*/
+	@Column(name = "ncheck_point3_flg")
 	private String ncheckPoint3Flg;
 
 	/**作業終了報告*/
@@ -264,9 +273,11 @@ public class IFSDto {
 	private String nmonthlyReportFlg;
 
 	/**サポート開始日*/
+	@Column(name = "nservice_from_date2")
 	private Date nserviceFromDate2;
 
 	/**サポート終了日*/
+	@Column(name = "nservice_to_date2")
 	private Date nserviceToDate2;
 
 	/**オーダ番号*/
