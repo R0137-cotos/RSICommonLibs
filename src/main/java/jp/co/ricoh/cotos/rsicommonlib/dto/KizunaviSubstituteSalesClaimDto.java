@@ -3,6 +3,7 @@ package jp.co.ricoh.cotos.rsicommonlib.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -232,12 +233,14 @@ public class KizunaviSubstituteSalesClaimDto {
 	 * 一次店_R会社コード
 	 */
 	@JsonProperty("一次店_R会社コード")
+	@Column(name = "primary_r_company_code")
 	private String primaryRCompanyCode;
 
 	/**
 	 * 一次店_R会社名
 	 */
 	@JsonProperty("一次店_R会社名")
+	@Column(name = "primary_r_company_name")
 	private String primaryRCompanyName;
 
 	/**
@@ -322,12 +325,14 @@ public class KizunaviSubstituteSalesClaimDto {
 	 * 二次店_R会社コード
 	 */
 	@JsonProperty("二次店_R会社コード")
+	@Column(name = "secondary_r_company_code")
 	private String secondaryRCompanyCode;
 
 	/**
 	 * 二次店_R会社名
 	 */
 	@JsonProperty("二次店_R会社名")
+	@Column(name = "secondary_r_company_name")
 	private String secondaryRCompanyName;
 
 	/**
