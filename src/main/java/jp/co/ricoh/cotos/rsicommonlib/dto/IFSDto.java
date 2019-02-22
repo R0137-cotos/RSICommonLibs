@@ -2,11 +2,16 @@ package jp.co.ricoh.cotos.rsicommonlib.dto;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import lombok.Data;
 
+@Entity
 @Data
 public class IFSDto {
 
+	@Id
 	private long id;
 
 	/**契約No.*/
