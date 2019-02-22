@@ -10,5 +10,5 @@
 |4|SQL実行結果を格納するDTOに@Entity追加|
 |5|SQL実行結果を格納するDTOに@Entity追加(ItemMasterDto)|
 |6|SQL実行結果を格納するDTOに@Entity追加(SalesCalcResultWorkForRsiRunning,TaxRateInfo)|
-|7|SQL実行結果を格納するDTOに@Entity追加(IFSDto)|
-|8|レスポンスをファイルに書き出すためのDTOにコンストラクタ追加|
+|7|SQL実行結果を格納するDTOに@Entity追加(IFSDto),レスポンスをファイルに書き出すためのDTOにコンストラクタ追加|
+|8|SQL実行結果を格納するDTOに@Entity追加(ContractDto,CommonMasterDetailDto)|
