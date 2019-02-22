@@ -1,10 +1,15 @@
 package jp.co.ricoh.cotos.rsicommonlib.dto;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import lombok.Data;
 
+@Entity
 @Data
 public class ContractDto {
 
+	@Id
 	private long id;
 
 	/**RJ管理番号**/
