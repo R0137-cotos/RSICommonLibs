@@ -3,6 +3,9 @@ package jp.co.ricoh.cotos.rsicommonlib.dto;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.Data;
@@ -10,6 +13,7 @@ import lombok.Data;
 /**
  * KIZUNAvi代売請求を表すDto
  */
+@Entity
 @Data
 public class KizunaviSubstituteSalesClaimDto {
 
@@ -38,7 +42,7 @@ public class KizunaviSubstituteSalesClaimDto {
 	 */
 	private long version;
 
-
+	@Id
 	private long dtoId;
 
 	/**

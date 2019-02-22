@@ -13,3 +13,4 @@
 |7|SQL実行結果を格納するDTOに@Entity追加(IFSDto),レスポンスをファイルに書き出すためのDTOにコンストラクタ追加|
 |8|SQL実行結果を格納するDTOに@Entity追加(ContractDto,CommonMasterDetailDto)|
 |9|IFSDtoの項目に@Column追加|
+|10|SQL実行結果を格納するDTOに@Entity追加(KizunaviSubstituteSalesClaimDto)|
