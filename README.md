@@ -15,3 +15,4 @@
 |9|IFSDtoの項目に@Column追加|
 |10|SQL実行結果を格納するDTOに@Entity追加(KizunaviSubstituteSalesClaimDto)|
 |11|KizunaviSubstituteSalesClaimDtoの項目に@Column追加|
+|12|KizunaviSubstituteSalesClaimForInvoiceのフィールド、メソッド修正|
