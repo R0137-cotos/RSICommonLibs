@@ -1,59 +1,76 @@
 package jp.co.ricoh.cotos.rsicommonlib.dto;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.annotations.ApiModelProperty;
+import jp.co.ricoh.cotos.commonlib.dto.result.CommonMasterResult;
+import jp.co.ricoh.cotos.commonlib.entity.contract.Contract;
 import lombok.Data;
 
 /**
- * KIZUNAvi代売請求を表すEntity
+ * KIZUNAvi代売請求を表すDto
  * 帳票に出力したい項目が増えた場合、
  * 該当プロパティの@JsonIgnoreを削除すれば出力されるようになります。
  * 参考：KIZUNAviCreateSubstituteInvoice#convertToReportSourcePageDto
  */
 @Data
-public class KizunaviSubstituteSalesClaimForInvoice {
+public class KizunaviSubstituteSalesClaimForInvoice{
+
+	//二次店を使う商流区分
+	@JsonIgnore
+	public static final String USE_SECONDARY_DEALERFLOW = "3";
+
+	//バッチの最初にKizunaviSubstituteSalesClaimPropatiesの値に書き換える
+	//普通はstaticはfinalにするけど 仕様変更があるかもしれない&このクラスの中で収めたいので 書き換えられる形にする
+	@JsonIgnore
+	public static int customerAddressOnelineLength = 40;
+
+	//バッチの最初にKizunaviSubstituteSalesClaimPropatiesの値に書き換える
+	//普通はstaticはfinalにするけど 仕様変更があるかもしれない&このクラスの中で収めたいので 書き換えられる形にする
+	@JsonIgnore
+	public static int itemContractNameOnelineLength = 30;
 
 	/**
 	 * 登録日時
 	 */
+	@JsonIgnore
 	private Date createdAt;
 
 	/**
 	 * 登録者
 	 */
+	@JsonIgnore
 	private String createdUserId;
 
 	/**
 	 * 更新日時
 	 */
+	@JsonIgnore
 	private Date updatedAt;
 
 	/**
 	 * 更新者
 	 */
+	@JsonIgnore
 	private String updatedUserId;
 
 	/**
 	 * version
 	 */
+	@JsonIgnore
 	private long version;
 
 	/*
 	 * 代売請求ID
 	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "kizunavi_substitute_sales_claim_seq")
-	@SequenceGenerator(name = "kizunavi_substitute_sales_claim_seq", sequenceName = "kizunavi_substitute_sales_claim_seq", allocationSize = 1)
 	@JsonIgnore
 	private long id;
 
@@ -69,11 +86,18 @@ public class KizunaviSubstituteSalesClaimForInvoice {
 	@JsonIgnore
 	private String rjManagementNumber;
 
+	//	/**
+	//	 * 契約ID
+	//	 */
+	//	@JsonIgnore
+	//	private long contractId;
+
 	/**
-	 * 契約ID
+	 * 契約
 	 */
 	@JsonIgnore
-	private long contractId;
+	@ApiModelProperty(value = "契約", required = true, position = 24)
+	private Contract contract;
 
 	/**
 	 * 契約明細ID
@@ -175,14 +199,13 @@ public class KizunaviSubstituteSalesClaimForInvoice {
 	/**
 	 * 取引日
 	 */
-	@Column(name = "trading_day")
 	@JsonIgnore
-	private Date tradingDayOrg;
+	private Date tradingDay;
 	/**
 	 * 取引日文字列(帳票出力用)
 	 */
 	@Transient
-	private String tradingDay;
+	private String tradingDayStr;
 
 	/**
 	 * 注文番号
@@ -254,13 +277,11 @@ public class KizunaviSubstituteSalesClaimForInvoice {
 	 * 一次店_R会社コード
 	 */
 	@JsonIgnore
-	@Column(name = "primary_r_company_code")
 	private String primaryRCompanyCode;
 	/**
 	 * 一次店_R会社名
 	 */
 	@JsonIgnore
-	@Column(name = "primary_r_company_name")
 	private String primaryRCompanyName;
 	/**
 	 * 一次店_販売店ID
@@ -331,14 +352,12 @@ public class KizunaviSubstituteSalesClaimForInvoice {
 	 * 二次店_R会社コード
 	 */
 	@JsonIgnore
-	@Column(name = "secondary_r_company_code")
 	private String secondaryRCompanyCode;
 
 	/**
 	 * 二次店_R会社名
 	 */
 	@JsonIgnore
-	@Column(name = "secondary_r_company_name")
 	private String secondaryRCompanyName;
 	/**
 	 * 二次店_販売店ID
@@ -406,4 +425,194 @@ public class KizunaviSubstituteSalesClaimForInvoice {
 	@Transient
 	private BigDecimal totalPrice;
 
+	/**
+	 * ご請求金額(帳票出力用)
+	 * お買上金額合計（税込）をそのまま返す。
+	 * @return ご請求金額(帳票出力用)
+	 */
+	public BigDecimal getTotalPrice() {
+		return getUnitPriceTaxInTotal();
+	}
+
+	/**
+	 * 販売店名
+	 * 商流区分 = "3"(代売_母店_接点店)なら二次店_販売店名、それ以外は一次店_販売店名を返す。
+	 * @return 販売店名
+	 */
+	public String getDistributorName() {
+		if (KizunaviSubstituteSalesClaimForInvoice.USE_SECONDARY_DEALERFLOW.equals(dealerFlow)) {
+			return getSecondaryDistributorName();
+		} else {
+			return getPrimaryDistributorName();
+		}
+	}
+
+	/**
+	 * R会社コード
+	 * 商流区分 = "3"(代売_母店_接点店)なら二次店_R会社コード、それ以外は一次店_R会社コードを返す。
+	 * @return R会社コード
+	 */
+	//		"	"（※１）
+	//		以下の条件でR会社コードを抽出(特定)する。
+	//		　※母店については請求書作成対象外とするために必要な処理となる
+	//
+	//		if (KIZUNAvi代売請求.商流区分 = ""3:代売_母店_接点店"")
+	//		    KIZUNAvi代売請求.二次店_R会社コード
+	//		else
+	//		    KIZUNAvi代売請求.一次店_R会社コード
+	public String getRCompanyCode() {
+		if (KizunaviSubstituteSalesClaimForInvoice.USE_SECONDARY_DEALERFLOW.equals(dealerFlow)) {
+			return getSecondaryRCompanyCode();
+		} else {
+			return getPrimaryRCompanyCode();
+		}
+	}
+
+	/**
+	 * 顧客情報_住所_1
+	 * 顧客情報_住所を既定の文字数で2分割し、1つめを返す。
+	 * @return 顧客情報_住所_1
+	 */
+	public String getCustomerAddress1() {
+		if (getCustomerAddress() == null)
+			return null;
+		return splitByZenkaku(getCustomerAddress(), KizunaviSubstituteSalesClaimForInvoice.customerAddressOnelineLength)[0];
+	}
+
+	/**
+	 * 顧客情報_住所_2
+	 * 顧客情報_住所を既定の文字数で2分割し、2つめを返す。
+	 * @return 顧客情報_住所_2
+	 */
+	public String getCustomerAddress2() {
+		if (getCustomerAddress() == null)
+			return null;
+		return splitByZenkaku(getCustomerAddress(), KizunaviSubstituteSalesClaimForInvoice.customerAddressOnelineLength)[1];
+	}
+
+	/**
+	 * 品種名1
+	 * 品種名を既定の文字数で2分割し、1つめを返す。
+	 * @return 品種名1
+	 */
+	public String getItemContractName1() {
+		if (getItemContractName() == null)
+			return null;
+		return splitByZenkaku(getItemContractName(), KizunaviSubstituteSalesClaimForInvoice.itemContractNameOnelineLength)[0];
+	}
+
+	/**
+	 * 品種名2
+	 * 品種名を既定の文字数で2分割し、2つめを返す。
+	 * @return 品種名2
+	 */
+	public String getItemContractName2() {
+		if (getItemContractName() == null)
+			return null;
+		return splitByZenkaku(getItemContractName(), KizunaviSubstituteSalesClaimForInvoice.itemContractNameOnelineLength)[1];
+	}
+
+	/**
+	 * 取引日文字列(帳票出力用)
+	 * MM/ddのフォーマットで返す。
+	 * @return
+	 */
+	public String getTradingDayStr() {
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd");
+		return sdf.format(tradingDay);
+	}
+
+	/**
+	 * E/U請求金額（税込）
+	 * E/U請求金額（税抜）とE/U請求金額（消費税） を合算して返す。
+	 * @return E/U請求金額（税込）
+	 */
+	public BigDecimal getEuBillingUnitPriceTaxIn() {
+		return getEuBillingUnitPriceTaxOut().add(getEuBillingUnitPriceTax());
+	}
+
+	/**
+	 * お買上金額合計（税込）(帳票出力用)
+	 * お買上金額合計（税抜）(帳票出力用)とお買上金額合計（消費税）(帳票出力用)を合算して返す。
+	 * @return お買上金額合計（税込）(帳票出力用)
+	 */
+	public BigDecimal getUnitPriceTaxInTotal() {
+		return getUnitPriceTaxOutTotal().add(getUnitPriceTaxTotal());
+	}
+
+	/**
+	 * 汎用マスタで定義された、費用種別による表示順を返す
+	 * @param commonMasterResult 汎用マスタ(費用種別)
+	 * @return 表示順
+	 */
+	//		（※２）
+	//		費用種別（初期費/月額(定額)/年額/月額(従量)）の表示順を 汎用マスタ＞汎用マスタ明細から取得する
+	public int getDisplayOrderByCostType(CommonMasterResult commonMasterResult) {
+		return commonMasterResult.getCommonMasterDetailResultList().stream().filter(e -> e.getCodeValue().equals(getCostType())).findFirst().get().getDisplayOrder();
+	}
+
+	/**
+	 * 顧客情報_郵便番号
+	 * 7文字の場合、3文字目と4文字目の間にハイフンを付与して返す。
+	 * @return 顧客情報_郵便番号
+	 */
+	public String getCustomerPostalCode() {
+		if (customerPostalCode != null && customerPostalCode.length() == 7) {
+			return customerPostalCode.substring(0, 3) + "-" + customerPostalCode.substring(3, 7);
+		} else {
+			return customerPostalCode;
+		}
+	}
+
+	/**
+	 * MoM企事部ID
+	 * @return
+	 */
+	public String getMomCustId() {
+		return this.contract.getCustomerContract().getMomCustId();
+	}
+
+	/**
+	 * 契約ID
+	 * @return
+	 */
+	public long getContactId() {
+		return this.contract.getId();
+	}
+
+	/**
+	 * 文字列を、指定された全角文字数で2分割して返す。
+	 * @param s 文字列
+	 * @param firstStringLength 全角文字数
+	 * @return 分割した文字数配列
+	 */
+	private String[] splitByZenkaku(String s, int firstStringLength) {
+		String[] ret = new String[2];
+		StringBuilder first = new StringBuilder();
+		StringBuilder second = new StringBuilder();
+
+		Map<String, Double> temp = new HashMap<>();
+		temp.put("temp", 0d);
+
+		s.chars().mapToObj(i -> (char) i).forEach(c -> {
+			if ((c <= '\u007e') || // 英数字
+					(c == '\u00a5') || // \記号
+					(c == '\u203e') || // ~記号
+					(c >= '\uff61' && c <= '\uff9f') // 半角カナ
+			) {
+				temp.put("temp", temp.get("temp") + 0.5d);
+			} else {
+				temp.put("temp", temp.get("temp") + 1d);
+			}
+			if (firstStringLength < temp.get("temp")) {
+				second.append(c.toString());
+			} else {
+				first.append(c.toString());
+			}
+		});
+		ret[0] = first.toString();
+		ret[1] = second.toString();
+
+		return ret;
+	}
 }
