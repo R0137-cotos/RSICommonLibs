@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 import io.swagger.annotations.ApiModelProperty;
 import jp.co.ricoh.cotos.commonlib.entity.EntityBase;
+import jp.co.ricoh.cotos.rsicommonlib.util.ExpectedNotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -94,6 +95,7 @@ public class SalesCalcResultWork extends EntityBase {
 	/**請求明細 単価*/
 	@ApiModelProperty(value = "請求明細 単価", required = false, position = 8, allowableValues = "range[0,9999999999999999999]")
 	@JsonProperty("InvoiceItem.UnitPrice")
+	@ExpectedNotNull
 	private BigDecimal invoiceitemUnitprice;
 
 	/**請求明細 数量*/
@@ -104,6 +106,7 @@ public class SalesCalcResultWork extends EntityBase {
 	/**請求明細 金額*/
 	@ApiModelProperty(value = "請求明細 金額", required = false, position = 10, allowableValues = "range[0,9999999999999999999]")
 	@JsonProperty("InvoiceItem.ChargeAmount")
+	@ExpectedNotNull
 	private BigDecimal invoiceitemChargeamount;
 
 	/**請求明細 作成日*/
@@ -121,23 +124,27 @@ public class SalesCalcResultWork extends EntityBase {
 	@Size(max = 255)
 	@JsonProperty("ProductRatePlanCharge.PRC_EDPCode__c")
 	@Column(name = "productrateplancharge_prc_edpcode_c")
+	@ExpectedNotNull
 	@ApiModelProperty(value = "リコー品種コード", required = false, position = 13, allowableValues = "range[0,255]")
 	private String productrateplanchargePrcEdpcodeC;
 
 	/**サービス期間.開始日*/
 	@ApiModelProperty(value = "サービス期間.開始日", required = false, position = 14)
 	@JsonProperty("InvoiceItem.ServiceStartDate")
+	@ExpectedNotNull
 	private Date invoiceitemServicestartdate;
 
 	/**サービス期間.終了日*/
 	@ApiModelProperty(value = "サービス期間.終了日", required = false, position = 15)
 	@JsonProperty("InvoiceItem.ServiceEndDate")
+	@ExpectedNotNull
 	private Date invoiceitemServiceenddate;
 
 	/**月額DB　契約ID*/
 	@Size(max = 255)
 	@ApiModelProperty(value = "月額DB　契約ID", required = false, position = 16, allowableValues = "range[0,255]")
 	@JsonProperty("Subscription.SUB_SubscriptionRegionalId__c")
+	@ExpectedNotNull
 	private String rjManagementNumber;
 
 	/**使用量*/
