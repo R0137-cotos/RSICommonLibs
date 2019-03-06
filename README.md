@@ -19,3 +19,4 @@
 |13|util追加(ExpectedNotNull,ZuoraGetExportPropaties,ZuoraRequestExportPropaties)|
 |14|レポジトリの修正とテスト追加|
 |15|参照するCommonLibsのバージョン修正|
+|16|参照するCommonLibsをcotos-phase_2nd→developに修正|
