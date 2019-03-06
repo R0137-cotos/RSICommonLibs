@@ -17,3 +17,4 @@
 |11|KizunaviSubstituteSalesClaimDtoの項目に@Column追加|
 |12|KizunaviSubstituteSalesClaimForInvoiceのフィールド、メソッド修正|
 |13|util追加(ExpectedNotNull,ZuoraGetExportPropaties,ZuoraRequestExportPropaties)|
+|14|レポジトリの修正とテスト追加|

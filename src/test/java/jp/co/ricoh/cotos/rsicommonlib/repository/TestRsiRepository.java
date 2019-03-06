@@ -28,6 +28,8 @@ import jp.co.ricoh.cotos.rsicommonlib.entity.SalesCalcResultWork;
  * Repository（RSI）のテストクラス
  *
  */
+//@ContextConfiguration(classes = SpringBootContextLoader.class)
+//@ContextConfiguration(classes = SpringBootTestContextBootstrapper.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class TestRsiRepository {
@@ -74,8 +76,7 @@ public class TestRsiRepository {
 	public void injectContext(ConfigurableApplicationContext injectContext) {
 		context = injectContext;
 		context.getBean(DBConfig.class).clearData();
-		context.getBean(DBConfig.class).initTargetTestData("repository/attachedFile.sql");
-		context.getBean(DBConfig.class).initTargetTestData("repository/estimation/estimation_all.sql");
+		context.getBean(DBConfig.class).initTargetTestData("repository/rsiRepository.sql");
 	}
 
 	@AfterClass

@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import jp.co.ricoh.cotos.commonlib.entity.EntityBase;
 import jp.co.ricoh.cotos.commonlib.entity.EntityBaseMaster;
 import jp.co.ricoh.cotos.commonlib.exception.ErrorInfo;
-import jp.co.ricoh.cotos.rsicommonlib.security.ParamterCheckResult;
+import jp.co.ricoh.cotos.rsicommonlib.security.bean.ParamterCheckResult;
 
 @Component
 public class TestTools {

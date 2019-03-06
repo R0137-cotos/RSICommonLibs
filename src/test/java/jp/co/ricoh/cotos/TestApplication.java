@@ -1,5 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib;
-
+package jp.co.ricoh.cotos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

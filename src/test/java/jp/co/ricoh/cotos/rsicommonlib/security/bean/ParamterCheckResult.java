@@ -1,4 +1,4 @@
-package jp.co.ricoh.cotos.rsicommonlib.security;
+package jp.co.ricoh.cotos.rsicommonlib.security.bean;
 
 import java.util.List;
 
