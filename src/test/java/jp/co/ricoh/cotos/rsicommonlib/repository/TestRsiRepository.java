@@ -13,7 +13,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import jp.co.ricoh.cotos.commonlib.db.DBUtil;
-import jp.co.ricoh.cotos.commonlib.entity.estimation.Estimation;
 import jp.co.ricoh.cotos.rsicommonlib.DBConfig;
 import jp.co.ricoh.cotos.rsicommonlib.TestTools;
 import jp.co.ricoh.cotos.rsicommonlib.entity.BasicContents;
@@ -219,7 +218,7 @@ public class TestRsiRepository {
 	public void DBUtilのメソッドテスト() throws Exception {
 
 		String sql = "SELECT * FROM BASIC_CONTENTS";
-		List<Estimation> foundList = dbutil.executeSelectWithSQL(sql);
+		List<BasicContents> foundList = dbutil.executeSelectWithSQL(sql);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(foundList);
