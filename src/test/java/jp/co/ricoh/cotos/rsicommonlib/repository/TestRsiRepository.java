@@ -1,5 +1,7 @@
 package jp.co.ricoh.cotos.rsicommonlib.repository;
 
+import java.util.List;
+
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,6 +13,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import jp.co.ricoh.cotos.commonlib.db.DBUtil;
+import jp.co.ricoh.cotos.commonlib.entity.estimation.Estimation;
 import jp.co.ricoh.cotos.rsicommonlib.DBConfig;
 import jp.co.ricoh.cotos.rsicommonlib.TestTools;
 import jp.co.ricoh.cotos.rsicommonlib.entity.BasicContents;
@@ -28,8 +31,6 @@ import jp.co.ricoh.cotos.rsicommonlib.entity.SalesCalcResultWork;
  * Repository（RSI）のテストクラス
  *
  */
-//@ContextConfiguration(classes = SpringBootContextLoader.class)
-//@ContextConfiguration(classes = SpringBootTestContextBootstrapper.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class TestRsiRepository {
@@ -211,6 +212,20 @@ public class TestRsiRepository {
 
 		// Entity の各項目の値が null ではないことを確認
 		testTool.assertColumnsNotNull(found);
+
+	}
+
+	@Test
+	public void DBUtilのメソッドテスト() throws Exception {
+
+		String sql = "SELECT * FROM BASIC_CONTENTS";
+		List<Estimation> foundList = dbutil.executeSelectWithSQL(sql);
+
+		// Entity が null ではないことを確認
+		Assert.assertNotNull(foundList);
+
+		// Entity 1件以上取得できていることを確認
+		Assert.assertNotEquals(foundList.size(), 0);
 
 	}
 
