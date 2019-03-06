@@ -24,7 +24,7 @@ apply plugin: 'maven'
 repositories {
     jcenter()
     mavenCentral()
-    maven { url 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/feature/cotos-phase_2nd/repository/CommonLibs' }
+    maven { url 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/develop/repository/CommonLibs' }
 }
 
 dependencies {
@@ -71,7 +71,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "file://${repo.absolutePath}"
-            pom.version = '0.0.15'
+            pom.version = '0.0.16'
             pom.groupId = 'jp.co.ricoh.cotos'
             pom.artifactId = 'rsi-common-libraries'
         }
