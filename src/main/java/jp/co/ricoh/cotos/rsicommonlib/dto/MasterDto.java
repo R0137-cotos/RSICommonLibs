@@ -73,4 +73,24 @@ public class MasterDto {
 	 */
 	private String parentCuicCompanyId;
 
+	/**
+	 * 販売店_販社コード
+	 */
+	private String hanshCd;
+
+	/**
+	 * 販売店_RINGS得意先コード
+	 */
+	private String ringsTkiskCd;
+
+	/**
+	 * 母店_販社コード
+	 */
+	private String parentHanshCd;
+
+	/**
+	 * 母店_RINGS得意先コード
+	 */
+	private String parentRingsTkiskCd;
+
 }
