@@ -22,3 +22,4 @@
 |16|参照するCommonLibsをcotos-phase_2nd→developに修正|
 |17|中継モジュールバッチにて参照するマスタDtoに項目追加|
 |18|参照するCommonLibsのバージョン修正|
+|19|参照するCommonLibsのバージョン修正|
