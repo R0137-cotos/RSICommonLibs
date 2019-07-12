@@ -141,116 +141,122 @@ public class SalesCalcResultWorkForRsiRunning {
 	private BigDecimal rCost;
 
 	/**
+	 * 届先コード
+	 */
+	@JsonProperty(value = "届先コード")
+	private String deliveryCd;
+
+	/**
 	 * 請求明細 数量
-	*/
+	 */
 	@JsonProperty("請求明細 数量")
 	private Integer invoiceitemQuantity;
 
 	/**
 	 * 請求明細 金額
-	*/
+	 */
 	@JsonProperty("請求明細 金額")
 	private BigDecimal invoiceitemChargeamount;
 
 	/**
 	 * 請求明細 単価
-	*/
+	 */
 	@JsonProperty("請求明細 単価")
 	private BigDecimal invoiceitemUnitprice;
 
 	/**
 	 * サービス期間.開始日
-	*/
+	 */
 	@JsonProperty("サービス期間.開始日")
 	private Date invoiceitemServicestartdate;
 
 	/**
 	 * 商流順１
-	*/
+	 */
 	@JsonProperty("商流順１")
 	private Integer motherDealerFlowOrder;
 
 	/**
 	 * サービス期間.終了日
-	*/
+	 */
 	@JsonProperty("サービス期間.終了日")
 	private Date invoiceitemServiceenddate;
 
 	/**
 	 * 販売店コード 母店
-	*/
+	 */
 	@JsonProperty("販売店コード 母店")
 	private String motherDistributorCd;
 
 	/**
 	 * 販売店名 母店
-	*/
+	 */
 	@JsonProperty("販売店名 母店")
 	private String motherDealerName;
 
 	/**
 	 * OE届け先コード 母店
-	*/
+	 */
 	@JsonProperty("OE届け先コード 母店")
 	private String motherOeDeliveryCd;
 
 	/**
 	 * MoM会社ID 母店
-	*/
+	 */
 	@JsonProperty("MoM会社ID 母店")
 	private String motherDistributorMomCmpId;
 
 	/**
 	 * MoMデポコード 母店
-	*/
+	 */
 	@JsonProperty("MoMデポコード 母店")
 	private String motherDistributorMomDepoCd;
 
 	/**
 	 * RINGS届先コード(3桁）
-	*/
+	 */
 	@JsonProperty("RINGS届先コード(3桁）")
 	private String motherRingsTodokesakiCd;
 
 	/**
 	 * 商流順２
-	*/
+	 */
 	@JsonProperty("商流順２")
 	private Integer dealerFlowOrder;
 
 	/**
 	 * 販売店コード 接点店
-	*/
+	 */
 	@JsonProperty("販売店コード 接点店")
 	private String distributorCd;
 
 	/**
 	 * 販売店名 接点店
-	*/
+	 */
 	@JsonProperty("販売店名 接点店")
 	private String dealerName;
 
 	/**
 	 * OE届け先コード 接点店
-	*/
+	 */
 	@JsonProperty("OE届け先コード 接点店")
 	private String oeDeliveryCd;
 
 	/**
 	 * MoM会社ID 接点店
-	*/
+	 */
 	@JsonProperty("MoM会社ID 接点店")
 	private String distributorMomCmpId;
 
 	/**
 	 * MoMデポコード 接点店
-	*/
+	 */
 	@JsonProperty("MoMデポコード 接点店")
 	private String distributorMomDepoCd;
 
 	/**
 	 * 拡張項目
-	*/
+	 */
 	@JsonProperty("拡張項目")
 	private String extendsParameter;
 
@@ -268,37 +274,37 @@ public class SalesCalcResultWorkForRsiRunning {
 
 	/**
 	 * RINGS届先コード(3桁）
-	*/
+	 */
 	@JsonProperty("RINGS届先コード(3桁）")
 	private String ringsTodokesakiCd;
 
 	/**
 	 * RINGS届先コード(3桁）(代売(母店/傘下店)でOE届先コードがない場合)
-	*/
+	 */
 	@JsonProperty("RINGS届先コード(3桁）")
 	private String subMotherRingsTodokesakiCd;
 
 	/**
 	 * RINGS届先コード(3桁）(代売(直結店のみ)でOE届先コードがない場合)
-	*/
+	 */
 	@JsonProperty("RINGS届先コード(3桁）")
 	private String subRingsTodokesakiCd;
 
 	/**
 	 * OE届け先コード 母店(代売(母店/傘下店)でOE届先コードがない場合)
-	*/
+	 */
 	@JsonProperty("OE届け先コード 母店")
 	private String subMotherOeDeliveryCd;
 
 	/**
 	 * OE届け先コード 接点店(代売(直結店のみ)でOE届先コードがない場合)
-	*/
+	 */
 	@JsonProperty("OE届け先コード 接点店")
 	private String subOeDeliveryCd;
 
 	/**
 	 * 拡張項目(契約担当SA社員)
-	*/
+	 */
 	@JsonProperty("拡張項目(契約担当SA社員)")
 	private String empExtendsParameter;
 }
