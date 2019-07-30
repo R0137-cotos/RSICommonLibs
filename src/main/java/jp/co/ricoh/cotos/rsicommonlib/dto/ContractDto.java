@@ -132,4 +132,6 @@ public class ContractDto {
 	/** 拡張項目(契約担当SA社員) */
 	private String empExtendsParameter;
 
+	/** 届先コード */
+	private String deliveryCd;
 }
