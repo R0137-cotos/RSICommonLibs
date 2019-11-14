@@ -1,0 +1,10 @@
+DELETE FROM sales_calc_result_work;
+DELETE FROM kizunavi_substitute_sales_claim_work_table;
+DELETE FROM kizunavi_substitute_sales_claim;
+DELETE FROM parent_distributor_info;
+DELETE FROM distributor_info;
+DELETE FROM branch_customer_info;
+DELETE FROM contract_info;
+DELETE FROM contractor_info;
+DELETE FROM cotos_management_info;
+DELETE FROM basic_contents;
