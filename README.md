@@ -25,3 +25,4 @@
 |19|参照するCommonLibsのバージョン修正|
 |20|SQL実行結果を格納するDTOに@Entity追加(SalesCalcResultWorkForRsiRunning)|
 |21|ContractDtoに届先コードを追加|
+|22|イニシャル計上処理 取得項目追加|
