@@ -1,5 +1,10 @@
 # Changelog
 
+## v2.0.1 (27/11/2019)
+- [**closed**] 4639 イニシャル計上処理 取得項目追加 [#29](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/29)
+
+---
+
 ## v2.0.0 (22/11/2019)
 - [**closed**] #3290 Dtoに項目追加 [#21](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/21)
 - [**closed**] 2882 中継モジュール取り込みにて参照するマスタDtoへ項目追加 [#18](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/18)
