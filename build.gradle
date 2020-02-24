@@ -24,7 +24,7 @@ apply plugin: 'maven'
 repositories {
     jcenter()
     mavenCentral()
-    maven { url 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/master/repository/CommonLibs' }
+    maven { url 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/topic/otsuka/repository/CommonLibs' }
 }
 
 dependencies {
@@ -37,7 +37,7 @@ dependencies {
     compile('org.hibernate:hibernate-validator:5.3.5.Final')
     compile('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.6')
 
-    compile('jp.co.ricoh.cotos:common-libraries:0.0.296')
+    compile('jp.co.ricoh.cotos:common-libraries:0.0.306')
     compile('com.auth0:java-jwt:3.4.0')
 
     compile group: 'org.apache.axis', name: 'axis', version: '1.4'
@@ -71,7 +71,7 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository url: "file://${repo.absolutePath}"
-            pom.version = '0.0.2'
+            pom.version = '0.0.3'
             pom.groupId = 'jp.co.ricoh.cotos'
             pom.artifactId = 'rsi-common-libraries'
         }
