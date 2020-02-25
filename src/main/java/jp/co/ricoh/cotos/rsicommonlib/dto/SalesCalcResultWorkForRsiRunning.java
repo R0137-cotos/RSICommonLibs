@@ -307,4 +307,10 @@ public class SalesCalcResultWorkForRsiRunning {
 	 */
 	@JsonProperty("拡張項目(契約担当SA社員)")
 	private String empExtendsParameter;
+	
+	/**
+	 * EDW大塚商会専用商品フラグ
+	 */
+	@JsonProperty("EDW大塚商会専用商品フラグ")
+	private Integer edwOtsukaProductFlg;
 }
