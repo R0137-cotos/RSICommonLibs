@@ -24,7 +24,7 @@ apply plugin: 'maven'
 repositories {
     jcenter()
     mavenCentral()
-    maven { url 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/topic/otsuka/repository/CommonLibs' }
+    maven { url 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/release/otsuka/repository/CommonLibs' }
 }
 
 dependencies {
