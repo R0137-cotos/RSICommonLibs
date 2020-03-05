@@ -22,7 +22,7 @@ import lombok.Data;
 @Data
 @Entity
 @IdClass(OtsukaMonthlyCsvPK.class)
-@JsonPropertyOrder({"サービス契約識別キー1", "サービス契約識別キー2", "サービス契約識別キー3", "契約番号", "設置先管理番号", "サービス契約ID", "サービス契約オプションID", "サービスコード", "料金プランコード", "オプションコード", "料金コード", "利用データ種別", "量", "利用年月", "利用年月日", "利用時間", "付帯情報1", "付帯情報2", "付帯情報3", "ファイル作成プログラム", "ファイル作成ユーザー", "ファイル作成日時"})
+@JsonPropertyOrder({ "サービス契約識別キー1", "サービス契約識別キー2", "サービス契約識別キー3", "契約番号", "設置先管理番号", "サービス契約ID", "サービス契約オプションID", "サービスコード", "料金プランコード", "オプションコード", "料金コード", "利用データ種別", "量", "利用年月", "利用年月日", "利用時間", "付帯情報1", "付帯情報2", "付帯情報3", "ファイル作成プログラム", "ファイル作成ユーザー", "ファイル作成日時" })
 public class OtsukaMonthlyCsvDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -137,7 +137,7 @@ public class OtsukaMonthlyCsvDto implements Serializable {
 	private String additionalInfo2;
 
 	/** 付帯情報3. */
-	@Column(name = "FFM_PRODACT_NAME_FOR_BILL")
+	@Column(name = "PRODUCT_TYPE_NAME")
 	@JsonProperty("付帯情報3")
 	@JsonRawValue
 	private String additionalInfo3;
