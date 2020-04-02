@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.0.14 (02/04/2020)
+- [**closed**] #5226 抽出項目の指定誤りを修正 [#35](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/35)
+- [**closed**] #5575 納品書備考欄にW番号を記載 [#33](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/33)
+- [**closed**] #5226 大塚商会様送付用 利用データ標準ファイルデータDTO追加 [#34](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/34)
+
+---
+
 ## v2.0.1 (27/11/2019)
 - [**closed**] 4639 イニシャル計上処理 取得項目追加 [#29](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/29)
 
