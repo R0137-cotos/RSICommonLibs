@@ -137,4 +137,7 @@ public class ContractDto {
 
 	/** 届先コード */
 	private String deliveryCd;
+	
+	/** EDW大塚商会専用商品フラグ **/
+	private Integer edwOtsukaProductFlg;
 }
