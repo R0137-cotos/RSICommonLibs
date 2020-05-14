@@ -127,6 +127,11 @@ public class KizunaviSubstituteSalesClaim extends EntityBase {
 	@JsonProperty("顧客情報_電話番号")
 	private String customerTel;
 	/**
+	 * 顧客情報_ MoM企業ID
+	 */
+	@JsonProperty("顧客情報_ MoM企業ID")
+	private String customerMomCompanyId;
+	/**
 	 * 取引日
 	 */
 	@JsonProperty("取引日")
@@ -203,6 +208,11 @@ public class KizunaviSubstituteSalesClaim extends EntityBase {
 	 */
 	@JsonProperty("一次店_販売店摘要")
 	private String primaryDealerSummary;
+	/**
+	 * 一次店_ MoM企業ID
+	 */
+	@JsonProperty("一次店_ MoM企業ID")
+	private String primaryMomCompanyId;
 	/**
 	 * 一次店_仕入単価
 	 */
@@ -281,6 +291,11 @@ public class KizunaviSubstituteSalesClaim extends EntityBase {
 	 */
 	@JsonProperty("二次店_販売店摘要")
 	private String secondaryDealerSummary;
+	/**
+	 * 二次店_ MoM企業ID
+	 */
+	@JsonProperty("二次店_ MoM企業ID")
+	private String secondaryMomCompanyId;
 	/**
 	 * 二次店_売上単価
 	 */
