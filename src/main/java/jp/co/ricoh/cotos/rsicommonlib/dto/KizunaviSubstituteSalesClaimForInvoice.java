@@ -197,6 +197,11 @@ public class KizunaviSubstituteSalesClaimForInvoice{
 	@JsonIgnore
 	private String customerTel;
 	/**
+	 * 顧客情報_企業ID
+	 */
+	@JsonIgnore
+	private String customerMomCompanyId;
+	/**
 	 * 取引日
 	 */
 	@JsonIgnore
@@ -299,6 +304,11 @@ public class KizunaviSubstituteSalesClaimForInvoice{
 	@JsonIgnore
 	private String primaryDealerSummary;
 	/**
+	 * 一次店_企業ID
+	 */
+	@JsonIgnore
+	private String primaryMomCompanyId;
+	/**
 	 * 一次店_仕入単価
 	 */
 	@JsonIgnore
@@ -374,6 +384,11 @@ public class KizunaviSubstituteSalesClaimForInvoice{
 	 */
 	@JsonIgnore
 	private String secondaryDealerSummary;
+	/**
+	 * 二次店_ MoM企業ID
+	 */
+	@JsonIgnore
+	private String secondaryMomCompanyId;
 	/**
 	 * 二次店_売上単価
 	 */
