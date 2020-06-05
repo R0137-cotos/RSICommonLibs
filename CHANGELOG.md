@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.0 (05/06/2020)
+- [**closed**] #6444 EDWご販売店自社利用時の対応 [#38](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/38)
+- [**closed**] #6444 KIZUNAvi連携用テーブルおよびDTOに企業IDを追加 [#37](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/37)
+
+---
+
 ## v2.0.14 (02/04/2020)
 - [**closed**] #5226 抽出項目の指定誤りを修正 [#35](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/35)
 - [**closed**] #5575 納品書備考欄にW番号を記載 [#33](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/33)
