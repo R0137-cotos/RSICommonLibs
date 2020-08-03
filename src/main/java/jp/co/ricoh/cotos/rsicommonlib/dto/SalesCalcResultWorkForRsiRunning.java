@@ -69,6 +69,12 @@ public class SalesCalcResultWorkForRsiRunning {
 	private ItemType itemType;
 
 	/**
+	 * 作成データパターン
+	 */
+	@JsonProperty(value = "作成データパターン")
+	private String ffmDataPtn;
+
+	/**
 	 * WEB受注注文番号
 	 */
 	@JsonProperty(value = "WEB受注注文番号")
@@ -139,6 +145,18 @@ public class SalesCalcResultWorkForRsiRunning {
 	 */
 	@JsonProperty(value = "Ｒ原価")
 	private BigDecimal rCost;
+
+	/**
+	 * 原価
+	 */
+	@JsonProperty(value = "原価")
+	private BigDecimal cost;
+
+	/**
+	 * 振替先課所コード
+	 */
+	@JsonProperty(value = "振替先課所コード")
+	private String transToServiceOrgCode;
 
 	/**
 	 * 届先コード
@@ -307,7 +325,7 @@ public class SalesCalcResultWorkForRsiRunning {
 	 */
 	@JsonProperty("拡張項目(契約担当SA社員)")
 	private String empExtendsParameter;
-	
+
 	/**
 	 * EDW大塚商会専用商品フラグ
 	 */
