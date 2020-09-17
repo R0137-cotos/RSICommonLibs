@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.6.0 (17/09/2020)
+- [**closed**] #7797 売上計算結果Dtoに振替用項目追加 [#40](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/40)
+
+---
+
 ## v3.0.0 (05/06/2020)
 - [**closed**] #6444 EDWご販売店自社利用時の対応 [#38](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/38)
 - [**closed**] #6444 KIZUNAvi連携用テーブルおよびDTOに企業IDを追加 [#37](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/37)
