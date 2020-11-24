@@ -123,9 +123,9 @@ public class SalesCalcResultWorkForRsiRunning {
 	private BigDecimal rjDividingPrice;
 
 	/**
-	 * ＲＪ仕入価格
+	 * ＳＡ仕切価格
 	 */
-	@JsonProperty(value = "ＲＪ仕入価格")
+	@JsonProperty(value = "ＳＡ仕切価格")
 	private BigDecimal rjPurchasePrice;
 
 	/**
@@ -331,4 +331,10 @@ public class SalesCalcResultWorkForRsiRunning {
 	 */
 	@JsonProperty("EDW大塚商会専用商品フラグ")
 	private Integer edwOtsukaProductFlg;
+
+	/**
+	 * ＲＪ販事本仕入価格
+	 */
+	@JsonProperty(value = "ＲＪ販事本仕入価格")
+	private BigDecimal rjHanjihonPurchasePrice;
 }
