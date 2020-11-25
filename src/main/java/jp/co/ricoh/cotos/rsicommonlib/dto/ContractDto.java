@@ -63,7 +63,7 @@ public class ContractDto {
 	/**見積金額**/
 	private String amountSummary;
 
-	/**RJ仕入価格**/
+	/**SA仕切価格**/
 	private String rjPurchasePrice;
 
 	/**RJ仕切価格**/
@@ -140,4 +140,7 @@ public class ContractDto {
 	
 	/** EDW大塚商会専用商品フラグ **/
 	private Integer edwOtsukaProductFlg;
+
+	/** RJ販事本仕入価格 **/
+	private String rjHanjihonPurchasePrice;
 }
