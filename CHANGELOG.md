@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.12.0 (17/12/2020)
+- [**closed**] #9037 契約DtoにＲＪ販事本仕入価格項目追加 [#44](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/44)
+- [**closed**] #9037 売上計算結果DtoにＲＪ販事本仕入価格項目追加、ＲＪ仕入価格をＳＡ仕切価格に項目名変更 [#43](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/43)
+
+---
+
 ## v3.6.0 (17/09/2020)
 - [**closed**] #7797 売上計算結果Dtoに振替用項目追加 [#40](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/40)
 
