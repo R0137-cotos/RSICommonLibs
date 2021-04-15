@@ -21,6 +21,9 @@ public class ContractDto {
 	/**契約明細ID**/
 	private String contractDetailId;
 
+	/** 契約番号 */
+	private String contractNumber;
+
 	/** 契約種別 */
 	private String contractType;
 
