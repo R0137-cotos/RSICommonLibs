@@ -140,10 +140,13 @@ public class ContractDto {
 
 	/** 届先コード */
 	private String deliveryCd;
-	
+
 	/** EDW大塚商会専用商品フラグ **/
 	private Integer edwOtsukaProductFlg;
 
 	/** RJ販事本仕入価格 **/
 	private String rjHanjihonPurchasePrice;
+
+	/** EDWOR年額契約商品フラグ **/
+	private Integer edwOrAnnualAmountProductFlg;
 }
