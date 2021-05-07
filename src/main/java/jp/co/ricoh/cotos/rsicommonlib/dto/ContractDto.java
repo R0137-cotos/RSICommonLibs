@@ -21,6 +21,9 @@ public class ContractDto {
 	/**契約明細ID**/
 	private String contractDetailId;
 
+	/** 契約番号 */
+	private String contractNumber;
+
 	/** 契約種別 */
 	private String contractType;
 
@@ -137,10 +140,13 @@ public class ContractDto {
 
 	/** 届先コード */
 	private String deliveryCd;
-	
+
 	/** EDW大塚商会専用商品フラグ **/
 	private Integer edwOtsukaProductFlg;
 
 	/** RJ販事本仕入価格 **/
 	private String rjHanjihonPurchasePrice;
+
+	/** EDWOR年額契約商品フラグ **/
+	private Integer edwOrAnnualAmountProductFlg;
 }
