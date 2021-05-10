@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.20.0 (10/05/2021)
+- [**closed**] #10912 契約DtoにEDWOR年額契約商品フラグ項目追加 [#48](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/48)
+- [**closed**] #10912 契約Dtoに契約番号項目追加 [#47](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/47)
+
+---
+
 ## v3.12.0 (17/12/2020)
 - [**closed**] #9037 契約DtoにＲＪ販事本仕入価格項目追加 [#44](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/44)
 - [**closed**] #9037 売上計算結果DtoにＲＪ販事本仕入価格項目追加、ＲＪ仕入価格をＳＡ仕切価格に項目名変更 [#43](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/43)
