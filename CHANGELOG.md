@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.1.0 (24/08/2021)
+- [**closed**] #7974 契約Dto、売上計算結果Dtoに納品書・請求書印字用コメントを追加 [#51](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/51)
+
+---
+
 ## v3.20.0 (10/05/2021)
 - [**closed**] #10912 契約DtoにEDWOR年額契約商品フラグ項目追加 [#48](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/48)
 - [**closed**] #10912 契約Dtoに契約番号項目追加 [#47](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/47)
