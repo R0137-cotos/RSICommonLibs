@@ -44,4 +44,9 @@ public class AccountingExecutionParameter {
 	/** 販売店情報（接点店） */
 	private DistributorInfoForRunnging distributorInfo;
 
+	/** 商品が従量課金の品種に紐づいているか否かの判定用フラグ
+	 * true: 商品が従量課金の品種に紐づいている
+	 * false: 商品が従量課金の品種に紐づいていない
+	 */
+	private boolean isIncludedPayPerUseItem;
 }
