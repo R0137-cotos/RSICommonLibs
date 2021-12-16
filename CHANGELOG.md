@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.9.0 (16/12/2021)
+- [**closed**] #12946 商品が従量課金の品種に紐づいているか否かの判定用フラグを追加 [#54](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/54)
+
+---
+
 ## v4.1.0 (24/08/2021)
 - [**closed**] #7974 契約Dto、売上計算結果Dtoに納品書・請求書印字用コメントを追加 [#51](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/51)
 
