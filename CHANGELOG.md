@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.0.0 (20/05/2022)
+- [**closed**] #14901 MoM権限サービスRIZM対応 [#58](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/58)
+
+---
+
 ## v4.9.0 (16/12/2021)
 - [**closed**] #12946 商品が従量課金の品種に紐づいているか否かの判定用フラグを追加 [#54](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/54)
 
