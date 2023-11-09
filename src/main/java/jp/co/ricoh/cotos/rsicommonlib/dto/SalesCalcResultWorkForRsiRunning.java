@@ -108,7 +108,7 @@ public class SalesCalcResultWorkForRsiRunning {
 	 * 数量
 	 */
 	@JsonProperty(value = "数量")
-	private int quantity;
+	private Long quantity;
 
 	/**
 	 * 金額
