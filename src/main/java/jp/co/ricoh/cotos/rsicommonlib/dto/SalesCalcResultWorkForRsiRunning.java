@@ -168,7 +168,7 @@ public class SalesCalcResultWorkForRsiRunning {
 	 * 請求明細 数量
 	 */
 	@JsonProperty("請求明細 数量")
-	private Integer invoiceitemQuantity;
+	private Long invoiceitemQuantity;
 
 	/**
 	 * 請求明細 金額
