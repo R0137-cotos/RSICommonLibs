@@ -203,7 +203,7 @@ public class KizunaviSubstituteSalesClaimDto {
 	 * 数量
 	 */
 	@JsonProperty("数量")
-	private Integer quantity;
+	private Long quantity;
 
 	/**
 	 * E/U請求単価
