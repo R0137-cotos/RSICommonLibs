@@ -101,7 +101,7 @@ public class SalesCalcResultWork extends EntityBase {
 	/**請求明細 数量*/
 	@ApiModelProperty(value = "請求明細 数量", required = false, position = 9, allowableValues = "range[0,99999]")
 	@JsonProperty("InvoiceItem.Quantity")
-	private Integer invoiceitemQuantity;
+	private Long invoiceitemQuantity;
 
 	/**請求明細 金額*/
 	@ApiModelProperty(value = "請求明細 金額", required = false, position = 10, allowableValues = "range[0,9999999999999999999]")
