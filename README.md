@@ -21,3 +21,4 @@
 |15|売上計算結果作業用DTO修正|
 |16|売上計算結果作業用DTO修正|
 |17|KIZUNAvi代売請求WorkTable修正|
+|18|KIZUNAvi代売請求Table修正|
