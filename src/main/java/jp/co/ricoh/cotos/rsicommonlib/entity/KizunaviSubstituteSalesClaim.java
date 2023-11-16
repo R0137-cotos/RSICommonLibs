@@ -155,7 +155,7 @@ public class KizunaviSubstituteSalesClaim extends EntityBase {
 	 * 数量
 	 */
 	@JsonProperty("数量")
-	private int quantity;
+	private Long quantity;
 	/**
 	 * E/U請求単価
 	 */
