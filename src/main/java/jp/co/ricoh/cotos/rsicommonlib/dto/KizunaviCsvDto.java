@@ -83,7 +83,7 @@ public class KizunaviCsvDto {
 
 	/**数量*/
 	@JsonProperty("数量")
-	private Integer quantity;
+	private Long quantity;
 
 	/**販売店１仕入単価*/
 	@JsonProperty("販売店１仕入単価")

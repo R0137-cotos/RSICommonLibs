@@ -230,7 +230,7 @@ public class KizunaviSubstituteSalesClaimForInvoice{
 	/**
 	 * 数量
 	 */
-	private int quantity;
+	private Long quantity;
 	/**
 	 * E/U請求単価
 	 */
