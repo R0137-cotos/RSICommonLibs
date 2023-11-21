@@ -1,5 +1,13 @@
 # Changelog
 
+## v7.7.0 (21/11/2023)
+- [**closed**] #21183 KIZUNAvi代売請求Table修正 [#63](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/63)
+- [**closed**] #21183 KIZUNAvi代売請求WorkTable修正 [#62](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/62)
+- [**closed**] #21183 売上計算結果作業用DTO修正 [#61](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/61)
+- [**closed**] #21183 売上計算結果作業用DTO修正 [#60](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/60)
+
+---
+
 ## v5.0.0 (20/05/2022)
 - [**closed**] #14901 MoM権限サービスRIZM対応 [#58](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/58)
 
