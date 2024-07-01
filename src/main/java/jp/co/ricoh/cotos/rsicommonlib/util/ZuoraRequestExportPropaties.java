@@ -25,8 +25,9 @@ public class ZuoraRequestExportPropaties {
 	public static final String ZOQL_ARG_STRING = "ARGS_";
 	public static final MediaType REQUEST_CONTENT_TYPE = MediaType.APPLICATION_JSON_UTF8;
 	private String apiPath;
-	private String apiAccessKeyId;
-	private String apiSecretAccessKey;
-	private String entityId;
+	private String clientId;
+	private String clientSecret;
+	private String grantType;
+	private String authorization;
 
 }
