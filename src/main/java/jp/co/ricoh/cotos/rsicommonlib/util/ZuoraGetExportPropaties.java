@@ -24,9 +24,9 @@ public class ZuoraGetExportPropaties {
 	public static final String PROCESSEDUSAGE_REQUESTBODY_RESOURCE_PATH = "classpath:json/processedusageRequestBody.json";
 	public static final String ZOQL_ARG_STRING = "ARGS_";
 	public static final MediaType REQUEST_CONTENT_TYPE = MediaType.APPLICATION_JSON_UTF8;
-	private String oauthTokenPath;
 	private String exportApiPath;
 	private String filesApiPath;
+	private String oauthTokenPath;
 	private String clientId;
 	private String clientSecret;
 	private String grantType;
