@@ -30,6 +30,5 @@ public class ZuoraGetExportPropaties {
 	private String clientId;
 	private String clientSecret;
 	private String grantType;
-	private String authorization;
 
 }
