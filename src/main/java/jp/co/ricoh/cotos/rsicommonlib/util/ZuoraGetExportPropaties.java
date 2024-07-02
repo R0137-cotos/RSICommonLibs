@@ -26,7 +26,7 @@ public class ZuoraGetExportPropaties {
 	public static final MediaType REQUEST_CONTENT_TYPE = MediaType.APPLICATION_JSON_UTF8;
 	private String exportApiPath;
 	private String filesApiPath;
-	private String oauthTokenPath;
+	private String oAuthTokenPath;
 	private String clientId;
 	private String clientSecret;
 	private String grantType;
