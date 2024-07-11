@@ -1,5 +1,10 @@
 # Changelog
 
+## v7.22.0 (11/07/2024)
+- [**closed**] #24765 Zuora認証方式変更 [#69](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/69)
+
+---
+
 ## v7.7.0 (21/11/2023)
 - [**closed**] #21183 KIZUNAvi代売請求Table修正 [#63](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/63)
 - [**closed**] #21183 KIZUNAvi代売請求WorkTable修正 [#62](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/62)
