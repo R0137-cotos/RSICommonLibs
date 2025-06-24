@@ -1,11 +1,11 @@
 buildscript {
     ext {
-        springBootVersion = '1.5.9.RELEASE'
+        springBootVersion = '3.5.0'
     }
     repositories {
         mavenCentral()
         maven {
-            url "https://plugins.gradle.org/m2/"
+            url = "https://plugins.gradle.org/m2/"
         }
     }
     dependencies {
@@ -19,43 +19,51 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: "org.sonarqube"
 apply plugin: "jacoco"
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 repositories {
     jcenter()
     mavenCentral()
-    maven { url 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/master/repository/CommonLibs' }
+    maven { url = 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/topic/aws_eosl/repository/CommonLibs' }
 }
 
 dependencies {
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('org.springframework.boot:spring-boot-starter-security')
-    compile('org.springframework.boot:spring-boot-starter-web')
-    compile('org.springframework.boot:spring-boot-starter-mail')
-    compile group: 'com.github.spullara.mustache.java', name: 'compiler', version: '0.9.5'
-    compileOnly('org.projectlombok:lombok')
-    compile('org.hibernate:hibernate-validator:5.3.5.Final')
-    compile('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.6')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa:3.5.0')
+    implementation('org.springframework.boot:spring-boot-starter-web:3.5.0')
+    implementation('org.springframework.boot:spring-boot-starter-security:3.5.0')
+    implementation('org.springframework.boot:spring-boot-starter-mail:3.5.0')
+    implementation group: 'com.github.spullara.mustache.java', name: 'compiler', version: '0.9.14'
+    implementation group: 'commons-beanutils', name: 'commons-beanutils', version: '1.10.1'
+    compileOnly('org.projectlombok:lombok:1.18.36')
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    implementation('org.hibernate:hibernate-validator:8.0.2.Final')
+    implementation('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.19.0-rc2')
+    implementation('jp.co.ricoh.cotos:common-libraries:0.0.664')
+    implementation('com.auth0:java-jwt:4.5.0')
+    implementation group: 'io.swagger', name: 'swagger-core', version: '1.5.15'
 
-    compile('jp.co.ricoh.cotos:common-libraries:0.0.323')
-    compile('com.auth0:java-jwt:3.4.0')
+    implementation group: 'org.apache.axis', name: 'axis', version: '1.4'
+    implementation group: 'wsdl4j', name: 'wsdl4j', version: '1.6.3'
+    implementation group: 'commons-discovery', name: 'commons-discovery', version: '0.5'
+    runtimeOnly fileTree(dir: 'libs', include: '*.jar')
+    runtimeOnly('org.springframework.boot:spring-boot-devtools:3.5.0')
 
-    compile group: 'org.apache.axis', name: 'axis', version: '1.4'
-    compile group: 'javax.xml', name: 'jaxrpc-api', version: '1.1'
-    compile group: 'wsdl4j', name: 'wsdl4j', version: '1.5.2'
-    compile group: 'commons-discovery', name: 'commons-discovery', version: '0.4'
-    compile fileTree(dir: 'libs', include: '*.jar')
-    runtime('org.springframework.boot:spring-boot-devtools')
-
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.jmockit:jmockit:1.21'
-    testCompile('org.dbunit:dbunit:2.5.4')
-    testCompileOnly('org.projectlombok:lombok')
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile('org.springframework.security:spring-security-test')
-    testCompile group: 'com.ninja-squad', name: 'DbSetup', version: '2.1.0'
-    testCompile 'org.apache.commons:commons-lang3:3.4'
-    testRuntime('com.h2database:h2')
+    testImplementation ('junit:junit:4.13.2')
+    implementation ('net.bytebuddy:byte-buddy:1.17.5')
+    testImplementation 'org.jmockit:jmockit:1.49'
+    testImplementation('org.dbunit:dbunit:3.0.0')
+    testCompileOnly('org.projectlombok:lombok:1.18.36')
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
+    testImplementation('org.springframework.boot:spring-boot-starter-test:3.5.0')
+    testImplementation('org.springframework.security:spring-security-test:6.4.4')
+    testImplementation group: 'com.ninja-squad', name: 'DbSetup', version: '2.1.0'
+    testImplementation 'org.apache.commons:commons-lang3:3.17.0'
+    testRuntimeOnly('com.h2database:h2:2.3.232')
+    
+    implementation 'org.springframework.security:spring-security-core:6.4.4'
+    implementation 'org.springframework.security:spring-security-web:6.4.4'
+    implementation 'org.springframework.security:spring-security-config:6.4.4'
+    implementation('com.auth0:java-jwt:4.5.0')
 }
 
 sonarqube {
@@ -67,20 +75,24 @@ sonarqube {
 
 def repo = new File(rootDir, "repository")
 
-uploadArchives {
+publishing {
     repositories {
-        mavenDeployer {
-            repository url: "file://${repo.absolutePath}"
-            pom.version = '0.0.16'
-            pom.groupId = 'jp.co.ricoh.cotos'
-            pom.artifactId = 'rsi-common-libraries'
+        maven {
+            url = "file://${repo.absolutePath}"
+            version = '0.0.17'
+            group = 'jp.co.ricoh.cotos'
+            name = 'rsi-common-libraries'
         }
     }
 }
 task sourcesJar(type: Jar, dependsOn:classes) {
-     classifier = 'sources'
+     archiveClassifier.set('sources')
      from sourceSets.main.allSource
 }
-artifacts {
-     archives sourcesJar
+
+test {
+    useJUnit()
+    forkEvery = 0L
+    def heapSize = System.getProperty('test.maxHeapSize') ?: '3G'
+    maxHeapSize = heapSize
 }

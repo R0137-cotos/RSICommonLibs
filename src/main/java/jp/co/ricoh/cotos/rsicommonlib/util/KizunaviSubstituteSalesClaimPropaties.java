@@ -9,7 +9,7 @@ import lombok.Data;
 @Component
 @Data
 @EnableConfigurationProperties
-@ConfigurationProperties(prefix = "cotos.kizunavi.substituteSalesClaim")
+@ConfigurationProperties(prefix = "cotos.kizunavi.substitute-sales-claim")
 public class KizunaviSubstituteSalesClaimPropaties {
 	public static final String ARG_DATE_FORMAT = "yyyyMMdd";
 	private String costTypeColumnString;

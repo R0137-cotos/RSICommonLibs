@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jp.co.ricoh.cotos.rsicommonlib.entity.BasicContents;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.BasicContents;
 import lombok.Data;
 
 /**

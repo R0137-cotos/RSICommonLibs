@@ -1,9 +1,8 @@
 package jp.co.ricoh.cotos.rsicommonlib.converter;
 
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
-
-import jp.co.ricoh.cotos.rsicommonlib.entity.ContractInfo.OrderType;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.ContractInfo.OrderType;
 
 /**
  *
