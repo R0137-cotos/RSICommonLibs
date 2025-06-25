@@ -13,17 +13,24 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import jp.co.ricoh.cotos.commonlib.db.DBUtil;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.BasicContents;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.BranchCustomerInfo;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.ContractInfo;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.ContractorInfo;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.CotosManagementInfo;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.DistributorInfo;
+import jp.co.ricoh.cotos.commonlib.migrate.entity.ParentDistributorInfo;
+import jp.co.ricoh.cotos.commonlib.migrate.repository.BasicContentsRepository;
+import jp.co.ricoh.cotos.commonlib.migrate.repository.BranchCustomerInfoRepository;
+import jp.co.ricoh.cotos.commonlib.migrate.repository.ContractInfoRepository;
+import jp.co.ricoh.cotos.commonlib.migrate.repository.ContractorInfoRepository;
+import jp.co.ricoh.cotos.commonlib.migrate.repository.CotosManagementInfoRepository;
+import jp.co.ricoh.cotos.commonlib.migrate.repository.DistributorInfoRepository;
+import jp.co.ricoh.cotos.commonlib.migrate.repository.ParentDistributorInfoRepository;
 import jp.co.ricoh.cotos.rsicommonlib.DBConfig;
 import jp.co.ricoh.cotos.rsicommonlib.TestTools;
-import jp.co.ricoh.cotos.rsicommonlib.entity.BasicContents;
-import jp.co.ricoh.cotos.rsicommonlib.entity.BranchCustomerInfo;
-import jp.co.ricoh.cotos.rsicommonlib.entity.ContractInfo;
-import jp.co.ricoh.cotos.rsicommonlib.entity.ContractorInfo;
-import jp.co.ricoh.cotos.rsicommonlib.entity.CotosManagementInfo;
-import jp.co.ricoh.cotos.rsicommonlib.entity.DistributorInfo;
 import jp.co.ricoh.cotos.rsicommonlib.entity.KizunaviSubstituteSalesClaim;
 import jp.co.ricoh.cotos.rsicommonlib.entity.KizunaviSubstituteSalesClaimWorkTable;
-import jp.co.ricoh.cotos.rsicommonlib.entity.ParentDistributorInfo;
 import jp.co.ricoh.cotos.rsicommonlib.entity.SalesCalcResultWork;
 
 /**
@@ -90,7 +97,7 @@ public class TestRsiRepository {
 	@Test
 	public void BasicContentsRepositoryのテスト() throws Exception {
 
-		BasicContents found = basicContentsRepository.findOne(1L);
+		BasicContents found = basicContentsRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -102,7 +109,7 @@ public class TestRsiRepository {
 	@Test
 	public void BranchCustomerInfoRepositoryのテスト() throws Exception {
 
-		BranchCustomerInfo found = branchCustomerInfoRepository.findOne(1L);
+		BranchCustomerInfo found = branchCustomerInfoRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -114,7 +121,7 @@ public class TestRsiRepository {
 	@Test
 	public void ContractInfoRepositoryのテスト() throws Exception {
 
-		ContractInfo found = contractInfoRepository.findOne(1L);
+		ContractInfo found = contractInfoRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -126,7 +133,7 @@ public class TestRsiRepository {
 	@Test
 	public void ContractorInfoRepositoryのテスト() throws Exception {
 
-		ContractorInfo found = contractorInfoRepository.findOne(1L);
+		ContractorInfo found = contractorInfoRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -139,7 +146,7 @@ public class TestRsiRepository {
 	@Test
 	public void CotosManagementInfoRepositoryのテスト() throws Exception {
 
-		CotosManagementInfo found = cotosManagementInfoRepository.findOne(1L);
+		CotosManagementInfo found = cotosManagementInfoRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -152,7 +159,7 @@ public class TestRsiRepository {
 	@Test
 	public void EstimationDetailRepositoryのテスト() throws Exception {
 
-		DistributorInfo found = distributorInfoRepository.findOne(1L);
+		DistributorInfo found = distributorInfoRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -165,7 +172,7 @@ public class TestRsiRepository {
 	@Test
 	public void KizunaviSubstituteSalesClaimRepositoryのテスト() throws Exception {
 
-		KizunaviSubstituteSalesClaim found = kizunaviSubstituteSalesClaimRepository.findOne(1L);
+		KizunaviSubstituteSalesClaim found = kizunaviSubstituteSalesClaimRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -178,7 +185,7 @@ public class TestRsiRepository {
 	@Test
 	public void KizunaviSubstituteSalesClaimWorkTableRepositoryのテスト() throws Exception {
 
-		KizunaviSubstituteSalesClaimWorkTable found = kizunaviSubstituteSalesClaimWorkTableRepository.findOne(1L);
+		KizunaviSubstituteSalesClaimWorkTable found = kizunaviSubstituteSalesClaimWorkTableRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -191,7 +198,7 @@ public class TestRsiRepository {
 	@Test
 	public void ParentDistributorInfoRepositoryのテスト() throws Exception {
 
-		ParentDistributorInfo found = parentDistributorInfoRepository.findOne(1L);
+		ParentDistributorInfo found = parentDistributorInfoRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);
@@ -204,7 +211,7 @@ public class TestRsiRepository {
 	@Test
 	public void SalesCalcResultWorkRepositoryのテスト() throws Exception {
 
-		SalesCalcResultWork found = salesCalcResultWorkRepository.findOne(1L);
+		SalesCalcResultWork found = salesCalcResultWorkRepository.findById(1L).orElse(null);
 
 		// Entity が null ではないことを確認
 		Assert.assertNotNull(found);

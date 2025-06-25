@@ -2,10 +2,9 @@ package jp.co.ricoh.cotos.rsicommonlib.dto;
 
 import java.util.Date;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import jp.co.ricoh.cotos.rsicommonlib.entity.BasicContents.ApplicationStatus;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import jp.co.ricoh.cotos.commonlib.entity.EnumType.ApplicationStatus;
 import lombok.Data;
 
 /**

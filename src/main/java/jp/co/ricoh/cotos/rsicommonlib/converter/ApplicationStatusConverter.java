@@ -1,9 +1,8 @@
 package jp.co.ricoh.cotos.rsicommonlib.converter;
 
-import javax.persistence.AttributeConverter;
-import javax.persistence.Converter;
-
-import jp.co.ricoh.cotos.rsicommonlib.entity.BasicContents.ApplicationStatus;
+import jakarta.persistence.AttributeConverter;
+import jakarta.persistence.Converter;
+import jp.co.ricoh.cotos.commonlib.entity.EnumType.ApplicationStatus;
 
 /**
  * 申請ステータスENUMコンバーター

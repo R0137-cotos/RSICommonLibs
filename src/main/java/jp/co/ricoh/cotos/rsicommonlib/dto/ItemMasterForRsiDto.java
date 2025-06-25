@@ -1,7 +1,7 @@
 package jp.co.ricoh.cotos.rsicommonlib.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 import lombok.Data;
 
@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class ItemMasterDto {
+public class ItemMasterForRsiDto {
 
 	@Id
 	private long id;
