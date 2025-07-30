@@ -38,7 +38,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
     implementation('org.hibernate:hibernate-validator:8.0.2.Final')
     implementation('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.19.0-rc2')
-    implementation('jp.co.ricoh.cotos:common-libraries:0.0.664')
+    implementation('jp.co.ricoh.cotos:common-libraries:0.0.669')
     implementation('com.auth0:java-jwt:4.5.0')
     implementation group: 'io.swagger', name: 'swagger-core', version: '1.5.15'
 
@@ -64,6 +64,7 @@ dependencies {
     implementation 'org.springframework.security:spring-security-web:6.4.4'
     implementation 'org.springframework.security:spring-security-config:6.4.4'
     implementation('com.auth0:java-jwt:4.5.0')
+    implementation("javax.xml.soap:javax.xml.soap-api:1.4.0")
 }
 
 sonarqube {
