@@ -21,3 +21,4 @@
 |15|売上計算結果作業用DTO修正、KIZUNAvi代売請求Table修正、KIZUNAvi代売請求WorkTable修正|
 |16|Zuoraプロパティクラス修正|
 |17|EOSL対応|
+|18|EOSL対応 build.gradleの修正|

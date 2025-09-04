@@ -86,9 +86,25 @@ publishing {
         }
     }
 }
-task sourcesJar(type: Jar, dependsOn:classes) {
-     archiveClassifier.set('sources')
-     from sourceSets.main.allSource
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            version = '0.0.18'
+            groupId = 'jp.co.ricoh.cotos'
+            artifactId = 'common-libraries'
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = "file://${repo.absolutePath}"
+        }
+    }
+}
+
+java {
+	withSourcesJar()
 }
 
 test {
