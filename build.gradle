@@ -77,22 +77,11 @@ sonarqube {
 def repo = new File(rootDir, "repository")
 
 publishing {
-    repositories {
-        maven {
-            url = "file://${repo.absolutePath}"
-            version = '0.0.17'
-            group = 'jp.co.ricoh.cotos'
-            name = 'rsi-common-libraries'
-        }
-    }
-}
-
-publishing {
     publications {
         mavenJava(MavenPublication) {
             version = '0.0.19'
             groupId = 'jp.co.ricoh.cotos'
-            artifactId = 'common-libraries'
+            artifactId = 'rsi-common-libraries'
             from components.java
         }
     }
