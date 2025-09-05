@@ -22,3 +22,4 @@
 |16|Zuoraプロパティクラス修正|
 |17|EOSL対応|
 |18|EOSL対応 build.gradleの修正|
+|19|EOSL対応 build.gradleの修正|
