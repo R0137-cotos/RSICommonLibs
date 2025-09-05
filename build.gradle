@@ -38,7 +38,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
     implementation('org.hibernate:hibernate-validator:8.0.2.Final')
     implementation('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.19.0-rc2')
-    implementation('jp.co.ricoh.cotos:common-libraries:0.0.669')
+    implementation('jp.co.ricoh.cotos:common-libraries:0.0.673')
     implementation('com.auth0:java-jwt:4.5.0')
     implementation group: 'io.swagger', name: 'swagger-core', version: '1.5.15'
 
@@ -90,7 +90,7 @@ publishing {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            version = '0.0.18'
+            version = '0.0.19'
             groupId = 'jp.co.ricoh.cotos'
             artifactId = 'common-libraries'
             from components.java
