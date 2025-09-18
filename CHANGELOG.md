@@ -1,5 +1,11 @@
 # Changelog
 
+## v9.9.0 (01/01/1970)
+- [**closed**] 31615 build.gradle, README修正 [#77](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/77)
+- [**closed**] 31615 売上計算結果WORKDTO修正 [#76](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/76)
+
+---
+
 ## v7.22.0 (11/07/2024)
 - [**closed**] #24765 Zuora認証方式変更 [#69](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/69)
 
