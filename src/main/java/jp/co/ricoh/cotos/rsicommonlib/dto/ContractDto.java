@@ -60,8 +60,8 @@ public class ContractDto {
 	/**数量**/
 	private String quantity;
 
-	/**仕切価格**/
-	private String partitionPrice;
+	/**単価**/
+	private String unitPrice;
 
 	/**見積金額**/
 	private String amountSummary;
