@@ -1,5 +1,10 @@
 # Changelog
 
+## v9.10.0 (01/01/1970)
+- [**closed**] #32674 計上用DTO修正 [#80](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/80)
+
+---
+
 ## v9.9.0 (01/01/1970)
 - [**closed**] 31615 build.gradle, README修正 [#77](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/77)
 - [**closed**] 31615 売上計算結果WORKDTO修正 [#76](https://mygithub.ritscm.xyz/cotos/RSICommonLibs/pull/76)
