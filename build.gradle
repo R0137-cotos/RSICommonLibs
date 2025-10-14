@@ -85,6 +85,13 @@ publishing {
             from components.java
         }
     }
+    repositories {
+        maven {
+            url = "file://${repo.absolutePath}"
+        }
+    }
+}
+
 
 java {
 	withSourcesJar()
