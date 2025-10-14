@@ -92,7 +92,6 @@ publishing {
     }
 }
 
-
 java {
 	withSourcesJar()
 }
