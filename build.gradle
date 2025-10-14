@@ -79,7 +79,7 @@ def repo = new File(rootDir, "repository")
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            version = '0.0.19'
+            version = '0.0.21'
             groupId = 'jp.co.ricoh.cotos'
             artifactId = 'rsi-common-libraries'
             from components.java
