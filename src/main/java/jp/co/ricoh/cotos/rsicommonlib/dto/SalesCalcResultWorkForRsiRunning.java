@@ -348,4 +348,10 @@ public class SalesCalcResultWorkForRsiRunning {
 	 *
 	 */
 	private String purchaseManageNumber;
+
+	/**
+	 * 契約番号
+	 */
+	@JsonProperty(value = "契約番号")
+	private String contractNumber;
 }
