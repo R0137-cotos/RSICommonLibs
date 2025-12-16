@@ -34,12 +34,13 @@ cotos:
       operatorOrgName: dummy_batch_operator_org
 spring:
   datasource:
-    url: jdbc:oracle:thin:@dev-db.cotos.ricoh.co.jp:1521/pdb1
+    url: jdbc:oracle:thin:@dev-db-aws.cotos.ricoh.co.jp:1521/pdb1
     username: cotos_ci_commonlibs
     password: cotos_ci_commonlibs
     driverClassName: oracle.jdbc.OracleDriver
+    type: com.zaxxer.hikari.HikariDataSource
   jpa:
-    database-platform: org.hibernate.dialect.Oracle12cDialect
+    database-platform: org.hibernate.dialect.OracleDialect
     hibernate:
       ddl-auto: none
     properties:
@@ -51,12 +52,14 @@ spring:
         proc:
           param_null_passing: true
         enable_lazy_load_no_trans: true
+        type:
+          preferred_enum_type: STRING
   jackson:
     serialization:
       fail-on-empty-beans: false
   mail:
     default-encoding: UTF-8
-    host: shipyard.cotos.ricoh.co.jp
+    host: dev.shipyard.cotos.ricoh.co.jp
     port: 1025
     username: koike.shinichi
     password: koike.shinichi
