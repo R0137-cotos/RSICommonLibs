@@ -24,7 +24,7 @@ apply plugin: 'maven-publish'
 repositories {
     jcenter()
     mavenCentral()
-    maven { url = 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/topic/aws_eosl/repository/CommonLibs' }
+    maven { url = 'https://mygithub.ritscm.xyz/raw/cotos/LibsRepo/master/repository/CommonLibs' }
 }
 
 dependencies {
@@ -38,7 +38,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.36'
     implementation('org.hibernate:hibernate-validator:8.0.2.Final')
     implementation('com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.19.0-rc2')
-    implementation('jp.co.ricoh.cotos:common-libraries:0.0.674')
+    implementation('jp.co.ricoh.cotos:common-libraries:0.0.678')
     implementation('com.auth0:java-jwt:4.5.0')
     implementation group: 'io.swagger', name: 'swagger-core', version: '1.5.15'
 
@@ -79,7 +79,7 @@ def repo = new File(rootDir, "repository")
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            version = '0.0.21'
+            version = '0.0.19'
             groupId = 'jp.co.ricoh.cotos'
             artifactId = 'rsi-common-libraries'
             from components.java

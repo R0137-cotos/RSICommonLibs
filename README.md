@@ -23,5 +23,3 @@
 |17|売上計算結果WorkDTOに契約番号項目追加|
 |18|計上用DTO修正|
 |19|EOSL対応|
-|20|EOSL対応 build.gradleの修正|
-|21|EOSL対応 build.gradleの修正|
